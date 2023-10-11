@@ -6,7 +6,7 @@ from pathlib import Path
 from argparse import ArgumentParser
 from ..__version__ import __version__
 
-ALLOWED_IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp']
+ALLOWED_IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp', 'ico']
 
 def whiteness(color):
   '''Returns the whiteness of a color ranging from 0 to 1... how much white a color is'''
