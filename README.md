@@ -2,9 +2,8 @@
 
 Simple Python package to display an image in the terminal by converting it into text. For the desired behavior to be achieved, the terminal must support colors and there should be no spacing between lines (0 line-spacing).
 
-## How to install
-```pip3 install ImageOnTerminal``` <br/>
-(Not published on PyPI yet)
+## Installation
+```pip3 install image-on-terminal``` <br/>
 
 ## How to use
 You can use the package either from the terminal as a module or from a script.
