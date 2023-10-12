@@ -46,11 +46,11 @@ display_image("myImage")
 ## Screenshots
 <div align='center'>
   <p>JPG 256x256</p><br/>
-  <img src="Screenshots/01.krita_jpg_x256.png"><br/><br/>
+  <img src="https://github.com/odell0111/image-on-terminal/blob/main/Screenshots/01.krita_jpg_x256.png"><br/><br/>
   <p>PNG 128x128</p><br/>
-  <img src="Screenshots/02.am_png_x128.png"><br/><br/>
+  <img src="https://github.com/odell0111/image-on-terminal/blob/main/Screenshots/02.am_png_x128.png"><br/><br/>
   <p>PNG 256x256</p><br/>
-  <img src="Screenshots/03.ar_png_x256.png"><br/><br/>
+  <img src="https://github.com/odell0111/image-on-terminal/blob/main/Screenshots/03.ar_png_x256.png"><br/><br/>
 </div>
 
 
