@@ -10,7 +10,7 @@ setup(
   author='Odell',
   keywords='terminal image imageonterminal imageinterminal image-in-terminal imageonconsole image-on-console imageinconsole image-in-console imagetotext image-to-text',
   author_email='odellgm11012001@gmail.com',
-  install_requires=['PIL',
+  install_requires=['pillow',
                     'rich',
                     'requests',
                     'argparse',
