@@ -7,7 +7,10 @@ name = "image-on-terminal"
 version = "1.0.0"
 description = "Simple Python package to display an image in the terminal by converting it into text"
 readme = "README.md"
-authors = [{ name = "Odell", email = "odellgm11012001@gmail.com" }]
+authors = [
+    { name = "Odell"},
+    { email = "odellgm11012001@gmail.com" }
+]
 license = { file = "LICENSE" }
 classifiers = [
     "License :: OSI Approved :: MIT License",
@@ -32,15 +35,17 @@ keywords = ['terminal',
     'imagetotext',
     'image-to-text',
     'image to text']
-dependencies = ['pillow',
-    'rich',
-    'requests',
-    'argparse',
-    'pathlib']
+dependencies = [
+    'argparse>=1.4.0',
+    'requests>=2.31.0',
+    'rich>=13.5.3',
+    'pathlib>=1.0.1',
+    'pillow>=10.0.1'
+]
 requires-python = ">=3.9"
 
 [project.urls]
-Homepage = "https://github.com/odell0111/image-on-terminal"
+repository = "https://github.com/odell0111/image-on-terminal"
 
 [project.scripts]
 realpython = "imageonterminal:main"
