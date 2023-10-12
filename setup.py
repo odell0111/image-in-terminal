@@ -2,15 +2,15 @@ from setuptools import setup
 from imageonterminal.__version__ import __version__
 
 setup(
-  name='ImageOnTerminal',
+  name='image-on-terminal',
   version=__version__,
   packages=['imageonterminal', 'imageonterminal.src'],
   url='https://github.com/odell0111/image-on-terminal',
   license='MIT',
   author='Odell',
-  keywords='terminal image imageonterminal imageinterminal imageonconsole imageinconsole imagetotext',
+  keywords='terminal image imageonterminal imageinterminal image-in-terminal imageonconsole image-on-console imageinconsole image-in-console imagetotext image-to-text',
   author_email='odellgm11012001@gmail.com',
-  install_requires=['PIP',
+  install_requires=['PIL',
                     'rich',
                     'requests',
                     'argparse',
