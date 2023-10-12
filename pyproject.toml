@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "image-on-terminal"
+version = "1.0.0"
+description = "Simple Python package to display an image in the terminal by converting it into text"
+readme = "README.md"
+authors = [{ name = "Odell", email = "odellgm11012001@gmail.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Environment :: Console",
+    "Operating System :: OS Independent"
+]
+keywords = ['terminal',
+    'image',
+    'imageonterminal',
+    'image on terminal',
+    'imageinterminal',
+    'image-in-terminal',
+    'image in terminal',
+    'imageonconsole',
+    'image-on-console',
+    'image on console',
+    'imageinconsole',
+    'image-in-console',
+    'image in console',
+    'imagetotext',
+    'image-to-text',
+    'image to text']
+dependencies = ['pillow',
+    'rich',
+    'requests',
+    'argparse',
+    'pathlib']
+requires-python = ">=3.9"
+
+[project.urls]
+Homepage = "https://github.com/odell0111/image-on-terminal"
+
+[project.scripts]
+realpython = "imageonterminal:main"

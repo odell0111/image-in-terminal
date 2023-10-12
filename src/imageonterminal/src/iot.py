@@ -4,9 +4,16 @@ from rich import print
 from io import BytesIO
 from pathlib import Path
 from argparse import ArgumentParser
-from ..__version__ import __version__
+
+try:
+  from importlib import metadata
+except ImportError:
+  import importlib_metadata as metadata
+
+__version__ = metadata.version("image-on-terminal")
 
 ALLOWED_IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp', 'ico']
+
 
 def whiteness(color):
   '''Returns the whiteness of a color ranging from 0 to 1... how much white a color is'''
@@ -103,6 +110,8 @@ def display_image(uri: str,
 
 def main():
   parser = ArgumentParser(
+    prog="imageonterminal",
+    usage="\n  %(prog)s image_uris [options]",
     description=f"Image On Terminal v{__version__} by Odell • https://github.com/odell0111/image-on-terminal.\n",
     epilog="Simple Python package to display an image in the terminal by converting it into text. For the desired behavior to be achieved, the terminal must support colors and there should be no spacing between lines (0 line-spacing).")
   parser.add_argument("image_uris", nargs='+',
