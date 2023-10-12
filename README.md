@@ -2,17 +2,17 @@
 
 Simple Python package to display an image in the terminal by converting it into text. For the desired behavior to be achieved, the terminal must support colors and there should be no spacing between lines (0 line-spacing).
 
-## How to install
-```pip3 install ImageOnTerminal``` <br/>
-(Not published on PyPI yet)
+## Installation
+```pip3 install image-on-terminal``` <br/>
 
 ## How to use
-You can use the package either from the terminal as a module or from a script.
+You can use the package either from the terminal or from a script.
 
 ```
-python -m imageonterminal -h
+imageonterminal -h
 
-usage: __main__.py [-h] [-w WIDTH] [-wt WHITENESS_THRESHOLD] [-dt DARKNESS_THRESHOLD] [-r] image_uris [image_uris ...]
+usage:
+  imageonterminal image_uris [options]
 
 positional arguments:
   image_uris            File path(s) or HTTP/HTTPS link(s) of the image(s) to be displayed. A directory can also be
@@ -30,16 +30,16 @@ options:
                         the directory passed and all its subdirectories.
 ```
 
-**From the terminal as a python module:**
+**From the terminal:**
 ```
-python -m imageonterminal "myImage.jpg"
-python -m imageonterminal "https://images/exampleImage.jpg" "myOtherImage.png" -w 128
-python -m imageonterminal "myImagesOnWhiteBackgrounds" -w 256 -wt 0.97 
+imageonterminal "myImage.jpg"
+imageonterminal "https://images/exampleImage.jpg" "myOtherImage.png" -w 128
+imageonterminal "myImagesOnWhiteBackgrounds" -w 256 -wt 0.97 
 ```
 
 **From a python script:**
 ```
-from imageonconsole import display_image
+from imageonterminal import display_image
 display_image("myImage")
 ```
 
