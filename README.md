@@ -3,7 +3,7 @@
 Simple Python package to display an image in the terminal by converting it into text. For the desired behavior to be achieved, the terminal must support colors and there should be no spacing between lines (0 line-spacing).
 
 ## Installation
-```pip3 install image-on-terminal``` <br/>
+```pip install image-on-terminal``` <br/>
 
 ## How to use
 You can use the package either from the terminal or from a script.
@@ -40,17 +40,17 @@ imageonterminal "myImagesOnWhiteBackgrounds" -w 256 -wt 0.97
 **From a python script:**
 ```
 from imageonterminal import display_image
-display_image("myImage")
+display_image("myImage.jpg")
 ```
 
 ## Screenshots
 <div align='center'>
   <p>JPG 256x256</p><br/>
-  <img src="https://github.com/odell0111/image-on-terminal/blob/main/Screenshots/01.krita_jpg_x256.png"><br/><br/>
+  <img src="https://raw.githubusercontent.com/odell0111/image-on-terminal/main/Screenshots/01.krita_jpg_x256.png"><br/><br/>
   <p>PNG 128x128</p><br/>
-  <img src="https://github.com/odell0111/image-on-terminal/blob/main/Screenshots/02.am_png_x128.png"><br/><br/>
+  <img src="https://raw.githubusercontent.com/odell0111/image-on-terminal/main/Screenshots/02.am_png_x128.png"><br/><br/>
   <p>PNG 256x256</p><br/>
-  <img src="https://github.com/odell0111/image-on-terminal/blob/main/Screenshots/03.ar_png_x256.png"><br/><br/>
+  <img src="https://raw.githubusercontent.com/odell0111/image-on-terminal/main/Screenshots/03.ar_png_x256.png"><br/><br/>
 </div>
 
 
