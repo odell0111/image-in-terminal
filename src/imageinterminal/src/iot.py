@@ -110,7 +110,7 @@ def display_image(uri: str,
 
 def main():
   parser = ArgumentParser(
-    prog="imageonterminal",
+    prog="imageinterminal",
     usage="\n  %(prog)s image_uris [options]",
     description=f"Image On Terminal v{__version__} by Odell • https://github.com/odell0111/image-on-terminal.\n",
     epilog="Simple Python package to display an image in the terminal by converting it into text. For the desired behavior to be achieved, the terminal must support colors and there should be no spacing between lines (0 line-spacing).")
