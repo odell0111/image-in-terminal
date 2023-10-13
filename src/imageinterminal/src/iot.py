@@ -10,7 +10,7 @@ try:
 except ImportError:
   import importlib_metadata as metadata
 
-__version__ = metadata.version("image-on-terminal")
+__version__ = metadata.version("image-in-terminal")
 
 ALLOWED_IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp', 'ico']
 
@@ -112,7 +112,7 @@ def main():
   parser = ArgumentParser(
     prog="imageinterminal",
     usage="\n  %(prog)s image_uris [options]",
-    description=f"Image On Terminal v{__version__} by Odell • https://github.com/odell0111/image-on-terminal.\n",
+    description=f"Image In Terminal v{__version__} by Odell • https://github.com/odell0111/image-on-terminal.\n",
     epilog="Simple Python package to display an image in the terminal by converting it into text. For the desired behavior to be achieved, the terminal must support colors and there should be no spacing between lines (0 line-spacing).")
   parser.add_argument("image_uris", nargs='+',
                       help="File path(s) or HTTP/HTTPS link(s) of the image(s) to be displayed. A directory can also be passed in which case all supported images in the directory will be displayed.")

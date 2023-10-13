@@ -46,7 +46,7 @@ dependencies = [
 requires-python = ">=3.9"
 
 [project.urls]
-repository = "https://github.com/odell0111/image-on-terminal"
+repository = "https://github.com/odell0111/image-in-terminal"
 
 [project.scripts]
-realpython = "imageonterminal:main"
+realpython = "imageinterminal:main"

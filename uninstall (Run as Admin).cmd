@@ -1,3 +1,3 @@
 @echo off
-pip uninstall image-on-terminal -y
+pip uninstall image-in-terminal -y
 pause
