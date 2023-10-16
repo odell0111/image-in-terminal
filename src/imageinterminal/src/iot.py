@@ -1,18 +1,20 @@
+from argparse import ArgumentParser
+from importlib import metadata
+from io import BytesIO
+from pathlib import Path
+
 import requests
 from PIL import Image
 from rich import print
-from io import BytesIO
-from pathlib import Path
-from argparse import ArgumentParser
 
-try:
-  from importlib import metadata
-except ImportError:
-  import importlib_metadata as metadata
+__pname__ = "image-in-terminal"
+mdata = metadata.metadata(__pname__)
+__version__ = mdata['Version']
+__homepage__ = mdata['Home-page']
+__author__ = mdata['Author']
+__summary__ = mdata['Summary']
 
-__version__ = metadata.version("image-in-terminal")
-
-ALLOWED_IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp', 'ico']
+COMPATIBLE_IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp', 'ico']
 
 
 def whiteness(color):
@@ -33,7 +35,9 @@ def display_image(uri: str,
                   width: int = -1,
                   whiteness_threshold: float = 1,
                   darkness_threshold: float = 0,
-                  recursive: bool = False):
+                  recursive: bool = False,
+                  procedural_printing: bool = False,
+                  ):
   """
   Displays an image in the terminal by converting it into text. For the desired behavior to be achieved, the terminal must support colors and there should be no spacing between lines (0 line-spacing)
 
@@ -54,6 +58,14 @@ def display_image(uri: str,
   recursive : bool
     If a directory is passed as image_uri the image search will be recursively performed within the directory passed and all its subdirectories
 
+  procedural_printing : bool
+    The image pixels will be printed one by one procedurally instead of printing/displaying the entire image at once. Useful when printing/displaying high resolution images
+
+  Returns
+  -------
+  str
+    The image converted to text
+
   """
 
   path = Path(uri)
@@ -61,25 +73,25 @@ def display_image(uri: str,
   if path.is_dir():
     for fp in path.glob('**/*.*' if recursive else '*.*'):
       ext = str(fp).split('.')[-1].lower()
-      if ext in ALLOWED_IMAGE_EXTENSIONS:
+      if ext in COMPATIBLE_IMAGE_EXTENSIONS:
         filePaths.append(str(fp))
   else:
     filePaths.append(BytesIO(requests.get(uri).content) if uri.startswith('http') else uri)
 
+  img_string = ""
   for fp in filePaths:
     img = Image.open(fp)
     img_width, img_height = img.size
 
+    ext = str(fp).split('.')[-1].lower()
+    img = img.convert('RGBA' if ext == 'png' else 'RGB')
+
     # Resizing the image
     if width != -1:
       scaleFactor = width / img_width
-      dest_height = int(img_height * scaleFactor)
-      img = img.resize((width, dest_height))
+      new_height = int(img_height * scaleFactor)
+      img = img.resize((width, new_height))
       img_width, img_height = img.size
-
-    ext = str(fp).split('.')[-1].lower()
-    img = img.convert('RGBA' if ext == 'png' else 'RGB')
-    img_string = ""
 
     # Reading 2 rows of pixels each iteration starting form upper left corner
     for y in range(0, img_height - 1, 2):
@@ -103,17 +115,25 @@ def display_image(uri: str,
         else:
           backgroundColor = f"rgb{belowPixel}".replace(' ', '')
 
-        img_string = img_string + f"[{foregroundColor} on {backgroundColor}]▀[/]"
+        pixels = f"[{foregroundColor} on {backgroundColor}]▀[/]"
+        if procedural_printing:
+          print(pixels, end='')
+        img_string = img_string + pixels
+
+      if procedural_printing:
+        print()
       img_string = img_string + '\n'
+
+  if not procedural_printing:
     print(img_string)
+  return img_string
 
 
 def main():
   parser = ArgumentParser(
-    prog="imageinterminal",
     usage="\n  %(prog)s image_uris [options]",
-    description=f"Image In Terminal v{__version__} by Odell • https://github.com/odell0111/image-in-terminal.\n",
-    epilog="Simple Python package to display an image in the terminal by converting it into text. For the desired behavior to be achieved, the terminal must support colors and there should be no spacing between lines (0 line-spacing).")
+    description=f"{__pname__.replace('-', ' ').title()} v{__version__} by {__author__} • {__homepage__}\n",
+    epilog=f"{__summary__}. For the desired behavior to be achieved, the terminal must support colors and there should be no spacing between lines (0 line-spacing).")
   parser.add_argument("image_uris", nargs='+',
                       help="File path(s) or HTTP/HTTPS link(s) of the image(s) to be displayed. A directory can also be passed in which case all supported images in the directory will be displayed.")
   parser.add_argument("-w", "--width", default=-1, type=int,
@@ -124,10 +144,13 @@ def main():
                       help="(float [0 - 1]). Pixels with a whiteness lower than this value will be inverted.")
   parser.add_argument("-r", "--recursive", action='store_true',
                       help="If a directory is passed as image_uri the image search will be recursively performed within the directory passed and all its subdirectories.")
+  parser.add_argument("-pp", "--procedural-printing", action='store_true',
+                      help="The image(s) pixels will be printed one by one procedurally instead of printing/displaying the entire image at once. Useful when printing/displaying high resolution images.")
   args = parser.parse_args()
 
   for uri in args.image_uris:
-    display_image(uri, args.width, args.whiteness_threshold, args.darkness_threshold, args.recursive)
+    display_image(uri, args.width, args.whiteness_threshold, args.darkness_threshold, args.recursive,
+                  args.procedural_printing)
 
 
 if __name__ == '__main__':

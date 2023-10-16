@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "image-in-terminal"
 
-version = "1.1.0"
+version = "1.2.0"
 description = "Simple Python package to display an image in the terminal by converting it into text"
 readme = "README.md"
 authors = [
@@ -50,3 +50,4 @@ repository = "https://github.com/odell0111/image-in-terminal"
 
 [project.scripts]
 imageinterminal = "imageinterminal:main"
+iit = "imageinterminal:main"
