@@ -1,4 +1,9 @@
-# Image In Terminal
+<div align="center">
+  <a href='https://pypi.org/project/image-in-terminal'>
+    <img src="https://img.shields.io/pypi/v/image-in-terminal?label=PyPI%20Package">
+  </a>
+  <h2>Image In Terminal</h2>
+</div>
 
 Simple Python package to display an image in the terminal by converting it into text. For the desired behavior to be achieved, the terminal must support colors and there should be no spacing between lines (0 line-spacing).
 
