@@ -1,4 +1,4 @@
 @echo off
 cd /D "%~dp0"
 pip install .
-pause
+timeout -t 5

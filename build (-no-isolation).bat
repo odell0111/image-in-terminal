@@ -1,3 +1,3 @@
 @echo off
-python -m build
+python -m build -n
 timeout -t 5
