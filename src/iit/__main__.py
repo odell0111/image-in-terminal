@@ -1,4 +1,4 @@
-from .src.iot import main
+from src.iit import main
 
 if __name__ == '__main__':
   main()

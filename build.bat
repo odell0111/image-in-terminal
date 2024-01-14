@@ -1,3 +1,4 @@
 @echo off
+cd /D "%~dp0"
 python -m build
-timeout -t 5
+timeout -t 4
