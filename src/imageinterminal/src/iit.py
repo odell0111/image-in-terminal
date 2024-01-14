@@ -8,6 +8,11 @@ from PIL import Image
 from rich import print
 
 __pname__ = "image-in-terminal"
+
+from rich.text import Text
+
+from rich_argparse import RichHelpFormatter
+
 mdata = metadata.metadata(__pname__)
 __version__ = mdata['Version']
 __homepage__ = mdata['Home-page']
@@ -130,10 +135,16 @@ def display_image(uri: str,
 
 
 def main():
+  description = [Text(__pname__.replace('-', ' ').title(), style='b blink'),
+                 f"v{__version__}",
+                 f'by {__author__}',
+                 '2023-2024']
+
   parser = ArgumentParser(
     usage="\n  %(prog)s image_uris [options]",
     description=f"{__pname__.replace('-', ' ').title()} v{__version__} by {__author__} • {__homepage__}\n",
-    epilog=f"{__summary__}. For the desired behavior to be achieved, the terminal must support colors and there should be no spacing between lines (0 line-spacing).")
+    epilog=f"{__summary__}. For the desired behavior to be achieved, the terminal must support colors and there should be no spacing between lines (0 line-spacing).",
+    formatter_class=RichHelpFormatter)
   parser.add_argument("image_uris", nargs='+',
                       help="File path(s) or HTTP/HTTPS link(s) of the image(s) to be displayed. A directory can also be passed in which case all supported images in the directory will be displayed.")
   parser.add_argument("-w", "--width", default=-1, type=int,
