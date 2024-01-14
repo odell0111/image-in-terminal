@@ -21,7 +21,7 @@ Usage:
   imageinterminal image_uris [options]
 
                                                   Image In Terminal
-                                                        v1.2.5
+                                                        v1.2.6
                                                        by Odell
                                                       2023-2024
 Positional Arguments:
