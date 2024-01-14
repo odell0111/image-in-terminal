@@ -2,6 +2,7 @@
   <a href='https://pypi.org/project/image-in-terminal'>
     <img src="https://img.shields.io/pypi/v/image-in-terminal?label=PyPI%20Package">
   </a>
+  <img src="https://static.pepy.tech/badge/image-in-terminal/month"/>
   <h2>Image In Terminal</h2>
 </div>
 
