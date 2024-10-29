@@ -65,6 +65,16 @@ from imageinterminal import display_image
 display_image("myImage.jpg")
 ```
 
+## Donations are welcomed and appreciated
+
+<br>
+<a
+href="https://oxapay.com/donate/42319117"
+target="_blank">
+<img src="https://app.oxapay.com/media/btn/light-btn.png"
+style="width: 185px">
+</a>
+
 <div align='center'>
   <h2>Screenshots</h2>
   <p>JPG 1440x1800</p><br/>
