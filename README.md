@@ -65,7 +65,7 @@ from imageinterminal import display_image
 display_image("myImage.jpg")
 ```
 
-## Donations are welcomed and appreciated
+## Donate
 
 <br>
 <a
