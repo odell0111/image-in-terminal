@@ -14,7 +14,7 @@ Simple Python package to display an image in the terminal by converting it into 
 ## How to use
 You can use the package either from the terminal or from a script.
 
-```
+```console
 imageinterminal -h
 
 Usage:
@@ -52,7 +52,7 @@ between lines (0 line-spacing).
 ```
 
 **From the terminal:**
-```
+```bash
 imageinterminal "myImage.jpg"
 iit "https://images/exampleImage.jpg" "myOtherImage.png" -w 128
 iit "myImagesOnWhiteBackgrounds" --width 256 -wt 0.97 
@@ -60,7 +60,7 @@ iit myImage2.png --no-fit --no-center
 ```
 
 **From a python script:**
-```
+```python
 from imageinterminal import display_image
 display_image("myImage.jpg")
 ```
