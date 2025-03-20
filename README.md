@@ -67,13 +67,20 @@ display_image("myImage.jpg")
 
 ## Donate
 
-<br>
-<a
-href="https://oxapay.com/donate/42319117"
-target="_blank">
-<img src="https://app.oxapay.com/media/btn/light-btn.png"
-style="width: 185px">
-</a>
+<a href="https://oxapay.com/donate/42319117" target="_blank"> <img src="https://app.oxapay.com/media/btn/light-btn.png" style="width: 200px"> </a>
+
+### TON
+```
+UQAtE6g_gxHgDoD_rzR_lHqBN9zbR9367U1Mxu21F7c3CPI5
+```
+### Bitcoin
+```
+bc1qvnu237er6rxt8cazze6lx3dme66n60gjwgh2mx
+```
+#### Speed Lightning Address username
+```
+bytechanger@speed.app
+```
 
 <div align='center'>
   <h2>Screenshots</h2>
