@@ -1,0 +1,6 @@
+rich
+pytest
+requests
+pillow
+argparse
+rich-argparse
