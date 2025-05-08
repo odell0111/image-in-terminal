@@ -70,26 +70,29 @@ unicode characters and there should be no spacing between lines (0 line-spacing)
 ```
 
 ## Donate
+
 If you find my work useful and want to encourage further development, you can do so by donating
 
-### [OxaPay](https://oxapay.com/donate/42319117)
+### USDT (BEP20 - BSC)
+`0x88046e6d0f2bf8629cd7fbd754e4e275083fc993`
+
+### USDT (SOL - Solana)
+`BL3QX5GtfXp8qha8PMLVwyud7gxB1aPE4Vsqotwscxsv`
+
+### USDT (TRC20 - Tron)
+`TMpXigKBghRQmgYD53KyuxS38FH516ermu`
+
+### BTC
+`1E9kw3FuaahfeproboNL7uvyBdjP9wY6CR`
+
+### BTC (BEP20)
+`0x88046e6d0f2bf8629cd7fbd754e4e275083fc993`
 
 ### TON
-```
-UQCyCnWVYOmv97idVFZ4tIewToZacRhYVwfGNU658fN5w3Kl
-```
-### Bitcoin
-```
-1E9kw3FuaahfeproboNL7uvyBdjP9wY6CR
-```
-### Bitcoin (BEP20)
-```
-0x88046e6d0f2bf8629cd7fbd754e4e275083fc993
-```
-#### Speed Lightning Address username
-```
-bytechanger@speed.app
-```
+`UQCyCnWVYOmv97idVFZ4tIewToZacRhYVwfGNU658fN5w3Kl`
+
+### Speed Lightning Address username
+`bytechanger@speed.app`
 
 <div align='center'>
   <h2>Screenshots</h2>

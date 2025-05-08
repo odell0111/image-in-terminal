@@ -13,7 +13,7 @@ from imageinterminal.utils import init_logger
 from imageinterminal.custom_rich_help_formatter import CustomRichHelpFormatter
 
 __pname__ = "image-in-terminal"
-__version__ = "1.31"
+__version__ = "1.32"
 __homepage__ = "https://github.com/odell0111/image-in-terminal"
 __author__ = "Odell"
 __summary__ = "Simple Python package to display a single or multiple images in the terminal by converting it into text"
